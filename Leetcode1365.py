@@ -1,9 +1,9 @@
-def smallerNumbersThanCurrent(self, nums):
-    nums_compared = [0] * len(nums)
-    for i in range(len(nums)):
-        for j in range(len(nums)):
-            if i == j:
+def smallerNumbersThanCurrent(nums):
+        dicton = {}
+        nums1 = sorted(nums, reverse=True)
+        for index in range(0, len(nums1) - 1):
+            if nums1[index] == nums1[index+1]:
                 continue
-            if nums[i] > nums[j]:
-                nums_compared[i] += 1
-    return nums_compared
+            dicton[nums1[index]] = len(nums1) - index - 1
+        dicton[nums1[-1]] = 0
+        return [dicton[index] for index in nums]
