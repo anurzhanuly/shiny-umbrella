@@ -17,6 +17,9 @@ func arrayStringsAreEqual(word1 []string, word2 []string) bool {
 			len2 += 1
 			letter2 = 0
 		}
+
+		letter1 += 1
+		letter2 += 1
 	}
 
 	return true
