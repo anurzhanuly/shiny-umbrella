@@ -23,5 +23,9 @@ func ArrayStringsAreEqual(word1 []string, word2 []string) bool {
 		}
 	}
 
+	if len(word1) > len1 || len(word2) > len2 {
+		return false
+	}
+
 	return true
 }
