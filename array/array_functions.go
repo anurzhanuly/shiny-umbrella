@@ -11,15 +11,16 @@ func ArrayStringsAreEqual(word1 []string, word2 []string) bool {
 		if len(word1[len1])-1 == letter1 {
 			len1 += 1
 			letter1 = 0
+		} else {
+			letter1 += 1
 		}
 
 		if len(word2[len2])-1 == letter2 {
 			len2 += 1
 			letter2 = 0
+		} else {
+			letter2 += 1
 		}
-
-		letter1 += 1
-		letter2 += 1
 	}
 
 	return true
