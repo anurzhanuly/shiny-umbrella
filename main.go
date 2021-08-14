@@ -8,5 +8,8 @@ import (
 
 func main() {
 	fmt.Println("Hello, world!")
-	fmt.Println(array.ArrayStringsAreEqual([]string{"some", "string"}, []string{"another"}))
+	fmt.Println(
+		array.ArrayStringsAreEqual(
+			[]string{"abc", "d", "defg"},
+			[]string{"a", "b", "c", "d", "def"}))
 }
