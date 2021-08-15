@@ -36,6 +36,10 @@ func CountConsistentStrings(allowed string, words []string) int {
 	letterCount := len(allowed)
 	result := 0
 
+	for _, rune := range allowed {
+		allowedRunes[rune] = 0
+	}
+
 	// 2: iterate over the "words" array
 	for i := 0; i < len(words); i++ {
 		for _, letter := range words[i] {
@@ -48,6 +52,7 @@ func CountConsistentStrings(allowed string, words []string) int {
 		}
 
 		tmpCount := 0
+
 		for key, value := range allowedRunes {
 			tmpCount += value
 			allowedRunes[key] = 0
