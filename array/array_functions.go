@@ -31,36 +31,31 @@ func ArrayStringsAreEqual(word1 []string, word2 []string) bool {
 }
 
 func CountConsistentStrings(allowed string, words []string) int {
-	// 1: convert "allowed" -> map
 	allowedRunes := make(map[rune]int)
-	letterCount := len(allowed)
 	result := 0
 
 	for _, rune := range allowed {
 		allowedRunes[rune] = 0
 	}
 
-	// 2: iterate over the "words" array
 	for i := 0; i < len(words); i++ {
+
+		isConsistent := true
+
 		for _, letter := range words[i] {
-			// 3: check if the letter of the array is in the map
 			_, exists := allowedRunes[letter]
 
-			if exists {
-				allowedRunes[letter] = 1
+			if !exists {
+				isConsistent = false
+
+				break
 			}
 		}
 
-		tmpCount := 0
-
-		for key, value := range allowedRunes {
-			tmpCount += value
-			allowedRunes[key] = 0
-		}
-
-		if tmpCount == letterCount {
+		if isConsistent {
 			result += 1
 		}
+
 	}
 
 	return result
