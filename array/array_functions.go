@@ -83,19 +83,29 @@ func countConsistentStringsOnlyArray(allowed string, words []string) int {
 }
 
 func TruncateSentence(s string, k int) string {
-	index := 0
-
-	for index < len(s) {
+	for index := 0; index < len(s); index++ {
 		if s[index] == ' ' {
 			k--
 		}
 
 		if k == 0 {
-			break
+			return s[:index]
 		}
-
-		index += 1
 	}
 
-	return s[:index]
+	return s
+}
+
+func UniqueMorseRepresentations(words []string) int {
+	var result int
+	morse := []string{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."}
+	encryptedWords := []string{}
+
+	for index, word := range words {
+		for _, letter := range word {
+			encryptedWords[index] += morse[letter-'a']
+		}
+	}
+
+	return result
 }
