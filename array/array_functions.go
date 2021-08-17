@@ -60,3 +60,24 @@ func CountConsistentStrings(allowed string, words []string) int {
 
 	return result
 }
+
+func countConsistentStringsOnlyArray(allowed string, words []string) int {
+	allowedRunes := make([]bool, 26)
+	result := len(words)
+
+	for _, letter := range allowed {
+		allowedRunes[letter-'a'] = true
+	}
+
+	for i := 0; i < len(words); i++ {
+		for _, letter := range words[i] {
+			if !allowedRunes[letter-'a'] {
+				result -= 1
+				break
+			}
+		}
+
+	}
+
+	return result
+}
