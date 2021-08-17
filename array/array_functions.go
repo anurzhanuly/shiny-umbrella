@@ -81,3 +81,21 @@ func countConsistentStringsOnlyArray(allowed string, words []string) int {
 
 	return result
 }
+
+func TruncateSentence(s string, k int) string {
+	index := 0
+
+	for index < len(s) {
+		if s[index] == ' ' {
+			k--
+		}
+
+		if k == 0 {
+			break
+		}
+
+		index += 1
+	}
+
+	return s[:index]
+}
