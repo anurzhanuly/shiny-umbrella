@@ -1,15 +1,21 @@
 package array
 
-func UniqueMorseRepresentations(words []string) int {
-	var result int
-	morse := []string{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."}
-	encryptedWords := []string{}
+import "strings"
 
-	for index, word := range words {
+func UniqueMorseRepresentations(words []string) int {
+	morse := []string{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."}
+	encryptedWords := make(map[string]bool)
+	var morseWord strings.Builder
+
+	for _, word := range words {
+		morseWord.Reset()
+
 		for _, letter := range word {
-			encryptedWords[index] += morse[letter-'a']
+			morseWord.WriteString(morse[letter-'a'])
 		}
+
+		encryptedWords[morseWord.String()] = true
 	}
 
-	return result
+	return len(encryptedWords)
 }
