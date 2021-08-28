@@ -8,7 +8,7 @@ func DiagonalSum(mat [][]int) int {
 	var ignoredIdx = -1
 
 	//1: find the length of the row to understand whether center is ignored
-	if secondaryIdx%2 == 1 {
+	if len(mat)%2 == 1 {
 		//1.5: if the row is odd make block for center element
 		ignoredIdx = secondaryIdx / 2
 	}
@@ -21,7 +21,7 @@ func DiagonalSum(mat [][]int) int {
 		}
 
 		primaryIdx += 1
-		secondaryIdx += 1
+		secondaryIdx -= 1
 	}
 
 	return result
