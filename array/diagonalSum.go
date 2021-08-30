@@ -6,7 +6,7 @@ func DiagonalSum(mat [][]int) int {
 	secondaryIdx := len(mat) - 1
 	var ignoredIdx = -1
 
-	if secondaryIdx%2 == 1 {
+	if len(mat)%2 == 1 {
 		ignoredIdx = secondaryIdx / 2
 	}
 
