@@ -61,7 +61,7 @@ func CountConsistentStrings(allowed string, words []string) int {
 	return result
 }
 
-func countConsistentStringsOnlyArray(allowed string, words []string) int {
+func CountConsistentStringsOnlyArray(allowed string, words []string) int {
 	allowedRunes := make([]bool, 26)
 	result := len(words)
 

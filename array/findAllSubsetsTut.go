@@ -34,6 +34,19 @@ func printer(subset []int) {
 	fmt.Println()
 }
 
-func bruteForceSubset() {
+func BruteForceSubset(nums []int) {
+	var result = make([][]int, len(nums))
 
+	for index := range nums {
+		tmp := make([]int, len(nums))
+		tmp[index] = nums[index]
+
+		for i := index + 1; i < len(nums); i++ {
+			tmp[i] = nums[i]
+		}
+
+		result[index] = tmp
+	}
+
+	fmt.Println(result)
 }

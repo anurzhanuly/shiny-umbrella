@@ -1,15 +1,15 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/anurzhanuly/shiny-umbrella/array"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello, world!")
-	fmt.Println(
-		array.ArrayStringsAreEqual(
-			[]string{"abc", "d", "defg"},
-			[]string{"a", "b", "c", "d", "def"}))
+	index := 10
+	result := 0
+
+	for i := index; i > 0; i-- {
+		fmt.Println("Superman")
+		result += i
+	}
+
+	fmt.Println(result)
 }
