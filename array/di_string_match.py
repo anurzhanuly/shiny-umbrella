@@ -1,9 +1,7 @@
-import sys
-
 class Solution:
     def diStringMatch(self, s: str) -> List[int]:
-        max = sys.maxsize
-        min = -max - 1
+        max = len(s)
+        min = 0
         result: list = []
         
         for char in s:
@@ -13,5 +11,7 @@ class Solution:
             else:
                 result.append(max)
                 max -= 1
+        
+        result.append(max)
         
         return result
