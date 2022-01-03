@@ -1,4 +1,4 @@
-class MyLinkedList:
+class LinkedList:
 
     def __init__(self):
         self.head = None
@@ -73,7 +73,7 @@ class MyLinkedList:
             node = node.next
             index -= 1
 
-        node = node.next.next
+        node.next = node.next.next
         self.index -= 1
 
 

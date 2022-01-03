@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class ListNode:
-    next_node = None
+    next = None
     value: int

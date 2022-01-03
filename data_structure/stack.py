@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
+
 from typing import List
-from data_structure.list_node import ListNode
+from .list_node import ListNode
 
 class Stack:
     top: ListNode = None
@@ -18,3 +20,10 @@ class Stack:
             return tmp
         else:
             return None
+
+
+s = Stack()
+n = ListNode()
+n.value = 12
+print(n)
+s.push()
