@@ -1,4 +1,4 @@
-def get_test_cases(counter, test_cases):
+def get_test_cases(counter: int, test_cases: list) -> list:
     if counter == 0:
         return test_cases
 
@@ -9,7 +9,7 @@ def get_test_cases(counter, test_cases):
     return get_test_cases(counter - 1, test_cases)
 
 
-def square(values):
+def square(values: list) -> int:
     if not len(values):
         return 0
 
@@ -18,7 +18,7 @@ def square(values):
     return (value * value) + square(values)
 
 
-def get_square_roots(test_cases, result):
+def get_square_roots(test_cases: list, result: list) -> list:
     if not len(test_cases):
         return result
 
@@ -29,17 +29,21 @@ def get_square_roots(test_cases, result):
 
 
 def print_values(values):
-    pass
+    if not len(values):
+        return
+
+    print(values.pop())
+
+    print_values(values)
 
 
 def main():
-    container = []
     cases_count = int(input())
-    test_cases = get_test_cases(cases_count, container)
-    squared_values = get_square_roots(test_cases, container)
+    test_cases = get_test_cases(cases_count, [])
+    squared_values = get_square_roots(test_cases, [])
 
     print(squared_values)
-    # print_values(squared_values)
+    print_values(squared_values)
 
 
 if __name__ == "__main__":
