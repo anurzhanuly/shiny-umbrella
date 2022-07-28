@@ -4,7 +4,7 @@ def get_test_cases(counter, test_cases):
 
     _ = input()
     test_values = input()
-    test_cases.append(test_values)
+    test_cases.append(test_values.split())
 
     return get_test_cases(counter - 1, test_cases)
 
