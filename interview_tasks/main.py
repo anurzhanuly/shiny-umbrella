@@ -16,7 +16,7 @@ def square(values: list) -> int:
     value = int(values.pop())
 
     if value < 0:
-        return 0 + square(values)
+        return square(values)
 
     return (value * value) + square(values)
 
