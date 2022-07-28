@@ -15,6 +15,9 @@ def square(values: list) -> int:
 
     value = int(values.pop())
 
+    if value < 0:
+        return 0 + square(values)
+
     return (value * value) + square(values)
 
 
@@ -41,8 +44,6 @@ def main():
     cases_count = int(input())
     test_cases = get_test_cases(cases_count, [])
     squared_values = get_square_roots(test_cases, [])
-
-    print(squared_values)
     print_values(squared_values)
 
 
